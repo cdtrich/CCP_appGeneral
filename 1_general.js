@@ -190,8 +190,16 @@ const createChart = async () => {
 					})
 					.strength(1)
 			)
-			.force("y", d3.forceY(dimensions.boundedHeight).strength(0.05))
-			.force("collide", d3.forceCollide(radius * 3))
+			// .force("y", d3.forceY(dimensions.boundedHeight).strength(0.04))
+			.force(
+				"center",
+				d3
+					.forceCenter()
+					// .x(dimensions.boundedWidth / 2)
+					.y(dimensions.boundedHeight / 2)
+			)
+			.force("collide", d3.forceCollide(radius * 2))
+			.force("charge", d3.forceManyBody().strength(0.1))
 			.stop();
 
 		for (var i = 0; i < 10; ++i) simulation.tick();
@@ -205,6 +213,7 @@ const createChart = async () => {
 			.scale(xScale)
 			.tickFormat(formatAxis)
 			.ticks();
+
 		const xAxis = selectOrCreate("g", "xAxis", bounds)
 			.call(xAxisGenerator)
 			.style("transform", `translate(0,${dimensions.boundedHeight}px)`);
