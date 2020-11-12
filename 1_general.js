@@ -155,12 +155,12 @@ const createChart = async () => {
 		//////////////////////////// colors ///////////////////////////////////////
 
 		const colorsType = [
-			"#113655",
-			"#f28c00",
-			"#3f8ca5",
-			"#fab85f",
-			"#99d4e3",
-			"#fed061"
+			// "#113655",
+			// "#f28c00",
+			"#3f8ca5"
+			// "#fab85f",
+			// "#99d4e3",
+			// "#fed061"
 		];
 
 		//////////////////////////// col var ///////////////////////////////////////
@@ -276,45 +276,45 @@ const createChart = async () => {
 			//////////////////////////// details //////////////////////////////////////
 			///////////////////////////////////////////////////////////////////////////
 
-			var dataL = 0;
-			var legendOffset = radius * 10;
-			// var legendOffset = (dimensions.boundedWidth - 100) / dataType.length;
+			// var dataL = 0;
+			// var legendOffset = radius * 10;
+			// // var legendOffset = (dimensions.boundedWidth - 100) / dataType.length;
 
-			var legend = selectOrCreate("g", "legend", bounds)
-				.attr("width", dimensions.boundedWidth)
-				.attr("height", radius * 2);
+			// var legend = selectOrCreate("g", "legend", bounds)
+			// 	.attr("width", dimensions.boundedWidth)
+			// 	.attr("height", radius * 2);
 
-			var drawLegend = legend
-				.selectAll(".legend")
-				.data(dataType)
-				.enter()
-				.append("g")
-				.attr("class", "legend")
-				.attr("transform", function (d, i) {
-					if (i === 0) {
-						dataL = d.length + legendOffset;
-						return "translate(0,0)";
-					} else {
-						var newdataL = dataL;
-						dataL += d.length + legendOffset;
-						return "translate(" + newdataL + ",0)";
-					}
-				});
+			// var drawLegend = legend
+			// 	.selectAll(".legend")
+			// 	.data(dataType)
+			// 	.enter()
+			// 	.append("g")
+			// 	.attr("class", "legend")
+			// 	.attr("transform", function (d, i) {
+			// 		if (i === 0) {
+			// 			dataL = d.length + legendOffset;
+			// 			return "translate(0,0)";
+			// 		} else {
+			// 			var newdataL = dataL;
+			// 			dataL += d.length + legendOffset;
+			// 			return "translate(" + newdataL + ",0)";
+			// 		}
+			// 	});
 
-			drawLegend
-				.append("circle")
-				.attr("cx", radius)
-				.attr("cy", radius)
-				.attr("r", radius / 2)
-				.style("fill", (d, i) => colorsType[i]);
+			// drawLegend
+			// 	.append("circle")
+			// 	.attr("cx", radius)
+			// 	.attr("cy", radius)
+			// 	.attr("r", radius / 2)
+			// 	.style("fill", (d, i) => colorsType[i]);
 
-			drawLegend
-				.append("text")
-				.attr("x", radius + radius)
-				.attr("y", radius * 1.5)
-				.text((d) => d)
-				.attr("class", "textselected")
-				.style("text-anchor", "start");
+			// drawLegend
+			// 	.append("text")
+			// 	.attr("x", radius + radius)
+			// 	.attr("y", radius * 1.5)
+			// 	.text((d) => d)
+			// 	.attr("class", "textselected")
+			// 	.style("text-anchor", "start");
 
 			///////////////////////////////////////////////////////////////////////////
 			//////////////////////////// details //////////////////////////////////////
