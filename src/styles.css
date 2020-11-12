@@ -131,7 +131,7 @@ table {
 
 td,
 th {
-	padding: 6px 9px;
+	padding: 6px 2px;
 	font-weight: normal;
 	text-align: left;
 }
@@ -157,7 +157,7 @@ td {
 	color: #aaa;
 	text-align: left;
 	border-bottom: 1px solid #eee;
-	padding-top: 1em;
+	padding-top: 0.5em;
 	padding-bottom: 0.1em;
 }
 
