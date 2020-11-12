@@ -99,7 +99,7 @@ const createChart = async () => {
 
 		let dimensions = {
 			width: size,
-			height: size * 0.5,
+			height: size * 0.8,
 			margin: {
 				top: 15,
 				right: 15,
@@ -191,7 +191,7 @@ const createChart = async () => {
 					.strength(1)
 			)
 			.force("y", d3.forceY(dimensions.boundedHeight).strength(0.05))
-			.force("collide", d3.forceCollide(radius * 2))
+			.force("collide", d3.forceCollide(radius * 3))
 			.stop();
 
 		for (var i = 0; i < 10; ++i) simulation.tick();
