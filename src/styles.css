@@ -146,14 +146,14 @@ th {
 }
 
 td {
-	/* font-size: 0.75em; */
+	font-size: 0.9em;
 	color: #000;
 	padding-top: 0em;
 	padding-bottom: 0em;
 }
 
 .definition {
-	/* font-size: 0.75em; */
+	font-size: 0.9em;
 	color: #aaa;
 	text-align: left;
 	border-bottom: 1px solid #eee;
